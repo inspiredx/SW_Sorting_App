@@ -1,37 +1,101 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Star Wars</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand">Star Wars</a>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Все</button>
-          </form>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Star Wars</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Star Wars</a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Все</button>
+      </form>
+    </div>
+  </nav>
+
+  <h1>Магистры-джедаи</h1>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Аген Колар</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </nav>
+        <div class="modal-body">
+          <img src="img/card-1.jpg" class="img-fluid rounded-start" alt="Аген Колар">
+          <div>
+            <h5>Описание:</h5>
+            <p>был мастером-джедаем расы забраков, известным за свои навыки владения световым мечом и готовностью его
+              применить.
+              Превосходный мечник, часто попадавший в сложные ситуации, Колар провел многие годы, путешествуя за границу
+              Внешнего Кольца с различными миссиями.
+              Он был невероятно предан Совету джедаев и редко сомневался в их мудрости или ставил под сомнение их
+              каноны.
+              Когда вспыхнули Войны клонов, Колар сражался в битве на Джеонозисе и потерял своего падавана Тана Юстера.
+              После битвы он стал генералом и принял участие в таких известных кампаниях, как захват Брентаала IV.
+              Колара часто посылали на персональные задания, такие, как попытка ареста Квинлана Воса. Вос в то время был
+              двойным агентом, а попытка ареста провалилась.
+              Позже Аген стал членом Совета джедаев и военным лидером.</p>
+            <h5>Появления:</h5>
+            <ul>
+              <li>Звёздные войны. Эпизод II: Атака клонов (первое появление)</li>
+              <li>Звёздные войны. Эпизод II: Атака клонов (комикс)</li>
+              <li>Последний урок — Звёздные войны: Истории, часть 14</li>
+              <li>Звёздные войны. Республика 53: Радиус взрыва</li>
+              <li>Джедай: Шаак Ти</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <h1>Магистры-джедаи</h1>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="img/card-1.jpg" class="img-fluid rounded-start" alt="Аген Колар">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Аген Колар</h5>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Подробней
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
