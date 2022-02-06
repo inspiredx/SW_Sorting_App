@@ -1,1 +1,1 @@
-# SW_Sorting_App
+# Sorting_App
