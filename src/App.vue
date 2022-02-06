@@ -1,60 +1,85 @@
 <template>
-    <div id="app">
+  <div id="app">
+    <app-header />
 
-        <app-header/>
+    <div class="container">
+      <h1 class="pt-3 pb-3">Персонажи Marvel</h1>
 
-        <div class="container">
-            <h1 class="pt-3 pb-3">Персонажи Star Wars</h1>
+      <!-- <pre>{{ characters }}</pre> -->
 
-            <app-modal/>
+      <app-modal :character ="characters[characterIndex]"/>
 
-            <spinner/>
+      <spinner v-if="loading"/>
 
-            <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://sun9-21.userapi.com/impg/y9IsEXM7CqJkYY4LX_Ydui3Yrimi1cEf8p_5qQ/7A1vzs-jBoc.jpg?size=368x416&quality=96&sign=9629c7bfef9ca9094f5b789dd0fffd12&type=album" class="img-fluid rounded-start" alt="Аген Колар">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Аген Колар</h5>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Подробней
-          </button>
+      <div class="row">
+        <div
+          v-for="(el, idx) in characters"
+          :key="el.id"
+          class="card mb-3 col-sm-12 col-md-6 col-lg-4"
+        >
+          <div class="row g-0">
+            <div class="col-4">
+              <img
+                :src="el.thumbnail"
+                :alt="el.name"
+                style="max-width: 100%"
+              />
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">{{el.name}}</h5>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  class="btn btn-secondary btn-sm"
+                  @click="characterIndex = idx"
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-        </div>
-
-    </div>
 </template>
 
 <script>
-    import Spinner from "./components/Spinner";
-    import AppModal from "./components/AppModal";
-    import AppHeader from "./components/AppHeader";
+import Spinner from "./components/Spinner";
+import AppModal from "./components/AppModal";
+import AppHeader from "./components/AppHeader";
 
-    export default {
-        name: 'App',
-        components: {
-            AppHeader,
-            AppModal,
-            Spinner,
-        },
-        data() {
-            return {
-                loading: false,
-                characters: [],
-                characterIndex: 0,
-            }
-        },
-        methods: {},
-        computed: {},
-    }
+export default {
+  name: "App",
+  components: {
+    AppHeader,
+    AppModal,
+    Spinner,
+  },
+  data() {
+    return {
+      loading: false,
+      characters: [],
+      characterIndex: 0,
+    };
+  },
+  methods: {
+    fetchCharacters: function () {
+      return fetch("https://netology-api-marvel.herokuapp.com/characters")
+        .then((res) => res.json())
+        .then((json) => (this.characters = json));
+    },
+  },
+  computed: {},
+  async mounted() {
+    this.loading = true;
+    await this.fetchCharacters();
+    this.loading = false;
+  },
+};
 </script>
 
 <style>
-
 </style>
