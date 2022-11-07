@@ -1,3 +1,3 @@
 # Sorting_App
 
-Сортирующее приложение на Vue.js
+Sorting App made with Vue.js
